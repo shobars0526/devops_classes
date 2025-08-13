@@ -1,0 +1,53 @@
+name: Job Step Conditions
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build started
+        run: echo "Build started"
+
+      - name: Simulate success
+        run: echo "Build completed successfully"
+
+      - name: Only if previous step succeeds
+        if: ${{ success() }}
+        run: echo "Previous step succeeded"
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    if: ${{ needs.build.result == 'success' }}
+    steps:
+      - name: Running tests
+        run: echo "Running tests..."
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: ${{ always() }}
+    steps:
+      - name: Deploy - build succeeded
+        if: ${{ needs.build.result == 'success' }}
+        run: echo "Deploying because build succeeded"
+
+      - name: Deploy - build failed
+        if: ${{ needs.build.result == 'failure' }}
+        run: echo "Handling failed build during deployment"
+
+  notify:
+    needs: deploy
+    runs-on: ubuntu-latest
+    if: ${{ needs.deploy.result == 'success' }}
+    steps:
+      - name: Notify team
+        run: echo "Notifying team about successful deployment"
+        
+ 
+  
+ 
+ 
