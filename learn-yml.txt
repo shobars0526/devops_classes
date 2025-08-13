@@ -1,0 +1,61 @@
+# yml syntax
+keep file extention .yml or .yml
+u don't need to specify any starting or default lines to mention this your starting
+VALscripting is going to be in key-value pairs
+each key should contain value
+YAML follows indentaion (2 spaces)
+key and values separated by colon
+you cannot use duplicate key's on same indentation level under same key/object.
+ex: name:
+namel: murali
+namel: krishna
+syntax error
+2 yaml configuration are separated by 3 hyphens (...)
+ex: config-1
+     ---
+config-2
+#YAML Data Types
+1. Scalar Data Type
+String: text enclosed in single or double quotes
+1. Scalar Data Type
+String: text enclosed in single or double quotes
+ex: name: 'alakuntla murali krishna'
+Numbers: Integers and Floating
+ex: age: 20 or 25.5
+Boolean: true/false
+ex: is_married: false
+Null: null or
+ex: number:
+2. Sequence/Array
+list of items represented by dash (-) followed by space list of items separated by coma inside squre braces
+ex: fruits:
+mango
+banana
+apple
+ex: fruits: [mango, banana, apple]
+3. Mapping/Dictionary
+   -data is going to be represented as key and value pair, key and value separated by clon followed by space
+    ex name: shoba 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
