@@ -1,0 +1,8 @@
+name: First workflow
+on: push
+jobs:
+ greet:
+  runs-on: ubuntu-latest
+  steps:
+    - name: want to greet
+      run: "echo hello devops_classes, welcome to first workflow"
