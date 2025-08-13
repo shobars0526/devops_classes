@@ -14,6 +14,8 @@ syntax error
 ex: config-1
      ---
 config-2
+in yaml hash tag (#represents the cmments)
+__________________________________________
 #YAML Data Types
 1. Scalar Data Type
 String: text enclosed in single or double quotes
